@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gra pamięciowa</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <section class="menu">
+        <h1>Witaj w grze pamięciowej</h1>
+        <p>Musisz znaleść podobne karty w jak najmniejszej ilości ruchów.</p>
+        <select name="changeLvl" id="changeLvl">
+            <option value="easy">Poziom: Łatwy</option>
+            <option value="mid">Poziom: Średni</option>
+            <option value="hard">Poziom: Trudny</option>
+        </select>
+        <button id="start">Rozpocznij gre</button>
+    </section>
+
+    <div id="winMenu">
+        <h2>Brawo wygrałeś</h2>
+    </div>
+    
+    <p id="pointsInfo"></p>
+    
+    <div id="con" class="container">
+
+    </div>
+
+    <p id="warning"></p>
+
+    <script src="script.js"></script>
+</body>
+</html>
