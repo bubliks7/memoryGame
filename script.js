@@ -5,6 +5,7 @@ const pointsInfo = document.querySelector('#pointsInfo');
 let arr = ['🐻', '🫏', '👄', '🦴', '🐿️', '🎈', '🎃', '🎗️'];
 
 const start = document.querySelector('#start');
+const backBtn = document.querySelector('#back');
 
 let points = 0;
 
@@ -16,7 +17,7 @@ start.addEventListener('click', () => {
     const changeLvl = document.querySelectorAll('select');
 
     changeLvl.forEach(element => {
-        console.log(element.value);
+        // console.log(element.value);
         if(element.value == 'easy') arr = ['🐻', '🫏', '👄', '🦴', '🐿️', '🎈', '🎃', '🎗️'];
         else if(element.value == 'mid') arr = ['🐻', '🫏', '👄', '🦴', '🐿️', '🎈', '🎃', '🎗️', '💕', '🐔'];
         else if(element.value == 'hard') arr = ['🐻', '🫏', '👄', '🦴', '🐿️', '🎈', '🎃', '🎗️', '💕', '🐔', '🧟‍♀️', '👀'];
@@ -24,6 +25,14 @@ start.addEventListener('click', () => {
         con.innerHTML = "";
         document.querySelector('section').style.display = "none";
         con.style.display = "grid";
+
+        backBtn.style.display = "block";
+        backBtn.addEventListener('click', () => {
+            con.style.display = 'none';
+            document.querySelector('section').style.display = "block";
+            pointsInfo.textContent = "";
+            backBtn.style.display = "none";
+        })
 
         points = 0;
         cardOne = null;
@@ -47,12 +56,13 @@ start.addEventListener('click', () => {
                 if(newElement === cardOne) return;
 
                 newElement.textContent = newElement.dataset.symbol;
+                newElement.style.boxShadow = "0px 0px 16px 0px #000000";
+                newElement.style.backgroundColor = "blueviolet";
                 if(cardOne === null){
                     cardOne = newElement;
                     return;
                 }
                 cardTwo = newElement;
-
                 check();
             });
         });
@@ -77,6 +87,12 @@ function check(){
         lock = true;
 
         setTimeout(() => {
+            cardOne.style.boxShadow = "none";
+            cardTwo.style.boxShadow = "none";
+
+            cardOne.style.backgroundColor = "rgba(0, 0, 0, 0)";
+            cardTwo.style.backgroundColor = "rgba(0, 0, 0, 0)";
+
             cardOne.textContent = "?";
             cardTwo.textContent = "?";
             cardOne = null;
@@ -88,4 +104,3 @@ function check(){
 }
 
 // console.log(cards);
-

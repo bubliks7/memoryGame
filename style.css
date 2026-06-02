@@ -11,6 +11,7 @@ body{
     align-items: center;
     flex-direction: column;
     height: 100vh;
+    background-color: #f9f9f9;
 }
 
 section{
@@ -24,8 +25,8 @@ section{
 }
 
 .container div{
-    height: 50px;
-    width: 50px;
+    height: 60px;
+    width: 60px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -51,31 +52,21 @@ section{
     .container{
         grid-template-columns: repeat(3, 1fr);
     }
-
-    /* .container div{
-        height: 50px;
-        width: 50px;
-        font-size: 20px;
-        margin: 20px;
-        padding: 8px;
-    } */
 }
 
-/* // Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) { 
     .container{
         grid-template-columns: repeat(4, 1fr);
     }
 
     .container div{
-        height: 65px;
-        width: 65px;
+        height: 70px;
+        width: 70px;
         margin: 20px;
         padding: 8px;
     }
 }
 
-/* // Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
     .container{
         grid-template-columns: repeat(4, 1fr);
@@ -90,3 +81,48 @@ section{
     }
  }
 
+.menu button, .containerBtn{
+    padding: 10px 30px;
+    border: 1px solid blueviolet;
+    background-color: #fff;
+    font-size: 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.menu button:hover{
+    scale: 1.2;
+    background-color: blueviolet;
+    box-shadow: 0px 10px 13px -7px rgb(0, 0, 0);
+}
+
+.menu select{
+    margin: 15px;
+    padding: 4px 20px;
+    transition: 0.3s;
+}
+.menu select:hover{
+    scale: 1.1;
+    box-shadow: 0px 10px 13px -7px #000000;
+}
+
+#pointsInfo{
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.containerBtn{
+    display: none;
+    background-color: blueviolet;
+    font-weight: bold;
+}
+.containerBtn:hover{
+    scale: 1.2;
+    background-color: rgb(0, 0, 0, 0);
+    box-shadow: 0px 10px 13px -7px rgb(0, 0, 0);
+}
+.containerBtn:active, .menu button:active{
+    scale: 1.0;
+    border: 3px solid blueviolet;
+}
